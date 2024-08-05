@@ -16,6 +16,6 @@ This documentation provides a comprehensive guide to using the Framework.
 
 Run the Script With:
 
-    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/ProjectZeroDays/Vengence/main/Install.sh)"
+    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/ProjectZeroDays/Vengence/main/install.sh)"
 
     
