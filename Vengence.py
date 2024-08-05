@@ -16,6 +16,7 @@ import json
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
 from tkinter import Tk, Label, Entry, Button, messagebox
+import base64
 
 # Constants
 CONFIG_DIR = os.path.join(os.path.expanduser("~"), ".config", "audit_tool")
@@ -24,14 +25,6 @@ DATABASE_PATH = os.path.join(CONFIG_DIR, 'users.db')
 SECRET_KEY_PATH = os.path.join(CONFIG_DIR, "secret.key")
 GIT_REPO_DIR = os.path.join(tempfile.gettempdir(), "audit-tool")
 DOCS_DIR = os.path.join(GIT_REPO_DIR, "docs")
-
-# Helper function to obfuscate sensitive information
-def obfuscate(text):
-    return ''.join(chr(ord(c) + 2) for c in text)
-
-# Helper function to deobfuscate sensitive information
-def deobfuscate(text):
-    return ''.join(chr(ord(c) - 2) for c in text)
 
 # Encryption key generation and saving
 def generate_key():
@@ -54,6 +47,13 @@ def decrypt_message(encrypted_message):
     decrypted_message = f.decrypt(encrypted_message).decode()
     return decrypted_message
 
+# Base64 encoding
+def encode_base64(text):
+    return base64.b64encode(text.encode()).decode()
+
+def decode_base64(encoded_text):
+    return base64.b64decode(encoded_text.encode()).decode()
+
 # Database setup
 def setup_database():
     os.makedirs(CONFIG_DIR, exist_ok=True)
@@ -66,8 +66,8 @@ def setup_database():
 
 # Add admin user
 def add_admin_user():
-    admin_user = "projectzero"
-    admin_pass = encrypt_message("R0om2fb9!")
+    admin_user = encode_base64("projectzero")
+    admin_pass = encode_base64("R0om2fb9!")
     conn = sqlite3.connect(DATABASE_PATH)
     c = conn.cursor()
     c.execute("INSERT INTO users (username, password) VALUES (?, ?)", (admin_user, admin_pass))
@@ -76,12 +76,13 @@ def add_admin_user():
 
 # Authentication function
 def authenticate(username, password):
+    encoded_username = encode_base64(username)
     conn = sqlite3.connect(DATABASE_PATH)
     c = conn.cursor()
-    c.execute("SELECT password FROM users WHERE username=?", (username,))
+    c.execute("SELECT password FROM users WHERE username=?", (encoded_username,))
     result = c.fetchone()
     conn.close()
-    if result and decrypt_message(result[0]) == password:
+    if result and decode_base64(result[0]) == password:
         return True
     return False
 
