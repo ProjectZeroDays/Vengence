@@ -8,12 +8,6 @@ Additionally, the script creates wiki and GitHub repository files, including mar
 
 Vengence is a comprehensive tool that provides various functionalities for auditing and security testing. Its features make it useful for professionals in the cybersecurity industry or anyone who needs to perform audits and tests on networks and systems.
 
-# To Get Started
-
-#### Install Vengence With:
-
-    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/ProjectZeroDays/Vengence/main/install.sh)"
-
 # Functionality
 
 #### User Authentication: 
@@ -50,6 +44,12 @@ Create wiki and GitHub repository files for comprehensive documentation.
 
 Automatically clean up all created files and directories after use.
 
+
+# To Get Started
+
+#### Install Vengence With:
+
+    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/ProjectZeroDays/Vengence/main/install.sh)"
 
 # Usage
 
