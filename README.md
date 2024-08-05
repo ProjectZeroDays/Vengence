@@ -8,9 +8,9 @@ Additionally, the script creates wiki and GitHub repository files, including mar
 
 Vengence is a comprehensive tool that provides various functionalities for auditing and security testing. Its features make it useful for professionals in the cybersecurity industry or anyone who needs to perform audits and tests on networks and systems.
 
-## To Get Started
+# To Get Started
 
-#### Install Vengence With:
+## Install Vengence With:
 
     /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/ProjectZeroDays/Vengence/main/install.sh)"
 
@@ -50,77 +50,57 @@ Vengence is a comprehensive tool that provides various functionalities for audit
 
 #### Automatically clean up all created files and directories after use.
 
+# Usage
 
-## Quick Start
-
-#### Clone the repository: 
-   
-    git clone https://github.com/projectzerodays/Vengence.git
-
-#### Navigate to the directory: 
-   
-    cd Vengence
-
-#### Install dependencies: 
-   
-    pip install -r requirements.txt
-
-#### Run the script: 
-   
-    python Vengence.py
-
-
-## Usage
-
-#### Display help message with all available options:
+## Display help message with all available options:
 
     --help
 
-#### Generate an encryption key for securing sensitive data:
+## Generate an encryption key for securing sensitive data:
     
     --generate-key
     
-#### Set up the database and add an admin user:
+## Set up the database and add an admin user:
 
     --setup-db
 
-#### Show a GUI login prompt for authentication:
+## Show a GUI login prompt for authentication:
 
     --login
 
-#### Create configuration files for the script:
+## Create configuration files for the script:
 
     --create-config
 
-#### Add the tool directory to the system PATH:
+## Add the tool directory to the system PATH:
 
     --add-path
 
-#### Remove the tool directory from the system PATH:
+## Remove the tool directory from the system PATH:
 
---remove-path
+    --remove-path
 
-#### Download required tools, such as Nmap and Wireshark:
+## Download required tools, such as Nmap and Wireshark:
     
     --download-tools
 
-#### Run Vengence to execute the downloaded tools:
+## Run Vengence to execute the downloaded tools:
 
     --run-tools 
 
-#### Send an audit report via email and SMS:
+## Send an audit report via email and SMS:
 
     --send-report
 
-#### Create wiki and GitHub repository files for documentation:
+## Create wiki and GitHub repository files for documentation:
 
     --create-wiki
 
-#### Remove all created files and clean up traces:
+## Remove all created files and clean up traces:
 
     --clean-up
 
-#### For detailed instructions, refer to the sections in the navigation bar of the generated wiki or the help section (python Vengence.py --help).
+## For detailed instructions, refer to the sections in the navigation bar of the generated wiki or the help section (python Vengence.py --help).
 
 
 ## Functionality 
