@@ -22,6 +22,8 @@ CONFIG_DIR = os.path.join(os.path.expanduser("~"), ".config", "audit_tool")
 TOOLS_DIR = os.path.join(tempfile.gettempdir(), "tools")
 DATABASE_PATH = os.path.join(CONFIG_DIR, 'users.db')
 SECRET_KEY_PATH = os.path.join(CONFIG_DIR, "secret.key")
+GIT_REPO_DIR = os.path.join(tempfile.gettempdir(), "audit-tool")
+DOCS_DIR = os.path.join(GIT_REPO_DIR, "docs")
 
 # Helper function to obfuscate sensitive information
 def obfuscate(text):
@@ -191,6 +193,113 @@ def send_audit_report():
     send_email("Audit Report", "Please find the attached audit report.", "projectzerodays@gmail.com")
     send_sms("Audit completed and report sent.", "+12028553904")
 
+# Create wiki and GitHub repository files
+def create_wiki_files():
+    os.makedirs(DOCS_DIR, exist_ok=True)
+
+    mkdocs_yml = """\
+site_name: Audit Tool Documentation
+nav:
+    - Home: index.md
+    - Usage: usage.md
+    - Configuration: configuration.md
+    - API Keys: api_keys.md
+    - Troubleshooting: troubleshooting.md
+theme: readthedocs
+"""
+    with open(os.path.join(GIT_REPO_DIR, "mkdocs.yml"), "w") as f:
+        f.write(mkdocs_yml)
+
+    index_md = """\
+# Welcome to the Audit Tool Documentation
+
+This documentation provides a comprehensive guide to using the Audit Tool script. 
+
+## Features
+
+- User Authentication
+- Encryption and Obfuscation
+- Tool Download and Execution
+- Email and SMS Notifications
+- Payment Processing
+
+## Quick Start
+
+1. **Clone the repository:**
+    ```bash
+    git clone https://github.com/yourusername/audit-tool.git
+    ```
+
+2. **Navigate to the directory:**
+    ```bash
+    cd audit-tool
+    ```
+
+3. **Install dependencies:**
+    ```bash
+    pip install -r requirements.txt
+    ```
+
+4. **Run the script with the desired option:**
+    ```bash
+    python audit_tool.py --help
+    ```
+
+For detailed instructions, refer to the sections in the navigation bar.
+"""
+    with open(os.path.join(DOCS_DIR, "index.md"), "w") as f:
+        f.write(index_md)
+
+    # Create other markdown files
+    for filename in ["usage.md", "configuration.md", "api_keys.md", "troubleshooting.md"]:
+        with open(os.path.join(DOCS_DIR, filename), "w") as f:
+            f.write(f"# {filename.split('.')[0].capitalize()}")
+
+    # Create GitHub workflow file
+    workflow_dir = os.path.join(GIT_REPO_DIR, ".github", "workflows")
+    os.makedirs(workflow_dir, exist_ok=True)
+
+    main_yml = """\
+name: CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Set up Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: '3.x'
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+    - name: Run tests
+      run: |
+        # Add your test commands here
+        python -m unittest discover tests
+"""
+    with open(os.path.join(workflow_dir, "main.yml"), "w") as f:
+        f.write(main_yml)
+
+def clean_up():
+    # Remove created files and directories
+    if os.path.exists(CONFIG_DIR):
+        shutil.rmtree(CONFIG_DIR)
+    if os.path.exists(TOOLS_DIR):
+        shutil.rmtree(TOOLS_DIR)
+    if os.path.exists(GIT_REPO_DIR):
+        shutil.rmtree(GIT_REPO_DIR)
+
 # Help section
 def print_help():
     help_text = """
@@ -207,6 +316,8 @@ def print_help():
       --download-tools      Download required tools
       --run-tools           Run audit tools
       --send-report         Send audit report via email and SMS
+      --create-wiki         Create wiki and GitHub repository files
+      --clean-up            Remove all created files and clean up traces
     """
     print(help_text)
 
@@ -234,6 +345,10 @@ def main():
         run_audit_tools()
     elif "--send-report" in sys.argv:
         send_audit_report()
+    elif "--create-wiki" in sys.argv:
+        create_wiki_files()
+    elif "--clean-up" in sys.argv:
+        clean_up()
     else:
         print_help()
 
