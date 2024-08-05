@@ -361,6 +361,7 @@ def print_help():
     Usage: python audit_tool.py [OPTIONS]
 
     Options:
+    
       --help                Show this help message and exit
       --generate-key        Generate encryption key
       --setup-db            Setup database and add admin user
