@@ -177,7 +177,7 @@ def download_tools():
             zip_ref.extractall(TOOLS_DIR)
         os.remove(zip_path)
 
-def run_audit_tools():
+def run_Vengence():
     nmap_path = os.path.join(TOOLS_DIR, "nmap-7.91", "nmap.exe")
     wireshark_path = os.path.join(TOOLS_DIR, "Wireshark-win64-3.4.0", "Wireshark.exe")
     
@@ -280,7 +280,7 @@ This documentation provides a comprehensive guide to using the Audit Tool script
     python Vengence.py --download-tools
     ```
     
-12. **To run the audit tools:**
+12. **To run the Vengence:**
     ```bash
     python Vengence.py --run-tools
     ```
@@ -358,10 +358,9 @@ def clean_up():
 # Help section
 def print_help():
     help_text = """
-    Usage: python audit_tool.py [OPTIONS]
+    Usage: python Vengence.py [OPTIONS]
 
     Options:
-    
       --help                Show this help message and exit
       --generate-key        Generate encryption key
       --setup-db            Setup database and add admin user
@@ -370,7 +369,7 @@ def print_help():
       --add-path            Add tool directory to system PATH
       --remove-path         Remove tool directory from system PATH
       --download-tools      Download required tools
-      --run-tools           Run audit tools
+      --run-tools           Run Vengence
       --send-report         Send audit report via email and SMS
       --create-wiki         Create wiki and GitHub repository files
       --clean-up            Remove all created files and clean up traces
@@ -398,7 +397,7 @@ def main():
     elif "--download-tools" in sys.argv:
         download_tools()
     elif "--run-tools" in sys.argv:
-        run_audit_tools()
+        run_Vengence()
     elif "--send-report" in sys.argv:
         send_audit_report()
     elif "--create-wiki" in sys.argv:
