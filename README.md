@@ -14,142 +14,141 @@ Vengence is a comprehensive tool that provides various functionalities for audit
 
     /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/ProjectZeroDays/Vengence/main/install.sh)"
 
+# Functionality
 
-   
+## User Authentication: 
 
-# User Authentication: 
-
-## Securely authenticate users with a GUI login prompt or command-line input.
-
-
-# Encryption and Obfuscation: 
-
-## Protect sensitive data using encryption and obfuscation techniques.
+#### Securely authenticate users with a GUI login prompt or command-line input.
 
 
-# Tool Download and Execution: 
+## Encryption and Obfuscation: 
 
-## Automatically download and execute required tools, such as Nmap and Wireshark, for auditing purposes.
-
-
-# Email and SMS Notifications: 
-
-## Send email and SMS notifications for various events, including the completion of audit reports.
+#### Protect sensitive data using encryption and obfuscation techniques.
 
 
-# Payment Processing: 
+## Tool Download and Execution: 
 
-## Handle financial transactions related to the auditing process with built-in payment processing functionality.
-
-
-# Wiki and GitHub Repository Files Creation: 
-
-## Create wiki and GitHub repository files for comprehensive documentation.
+#### Automatically download and execute required tools, such as Nmap and Wireshark, for auditing purposes.
 
 
-# Clean-up: 
+## Email and SMS Notifications: 
 
-## Automatically clean up all created files and directories after use.
+#### Send email and SMS notifications for various events, including the completion of audit reports.
 
 
-# Quick Start
+## Payment Processing: 
 
-## Clone the repository: 
+#### Handle financial transactions related to the auditing process with built-in payment processing functionality.
+
+
+## Wiki and GitHub Repository Files Creation: 
+
+#### Create wiki and GitHub repository files for comprehensive documentation.
+
+
+## Clean-up: 
+
+#### Automatically clean up all created files and directories after use.
+
+
+## Quick Start
+
+#### Clone the repository: 
    
     git clone https://github.com/projectzerodays/Vengence.git
 
-## Navigate to the directory: 
+#### Navigate to the directory: 
    
     cd Vengence
 
-## Install dependencies: 
+#### Install dependencies: 
    
     pip install -r requirements.txt
 
-## Run the script: 
+#### Run the script: 
    
     python Vengence.py
 
 
-# Usage
+## Usage
 
-## Display help message with all available options:
+#### Display help message with all available options:
 
     --help
 
-## Generate an encryption key for securing sensitive data:
+#### Generate an encryption key for securing sensitive data:
     
     --generate-key
     
-## Set up the database and add an admin user:
+#### Set up the database and add an admin user:
 
     --setup-db
 
-## Show a GUI login prompt for authentication:
+#### Show a GUI login prompt for authentication:
 
     --login
 
-## Create configuration files for the script:
+#### Create configuration files for the script:
 
     --create-config
 
-## Add the tool directory to the system PATH:
+#### Add the tool directory to the system PATH:
 
     --add-path
 
-## Remove the tool directory from the system PATH:
+#### Remove the tool directory from the system PATH:
 
 --remove-path
 
-## Download required tools, such as Nmap and Wireshark:
+#### Download required tools, such as Nmap and Wireshark:
     
     --download-tools
 
-## Run Vengence to execute the downloaded tools:
+#### Run Vengence to execute the downloaded tools:
 
     --run-tools 
 
-## Send an audit report via email and SMS:
+#### Send an audit report via email and SMS:
 
     --send-report
 
-## Create wiki and GitHub repository files for documentation:
+#### Create wiki and GitHub repository files for documentation:
 
     --create-wiki
 
-## Remove all created files and clean up traces:
+#### Remove all created files and clean up traces:
 
     --clean-up
 
-## For detailed instructions, refer to the sections in the navigation bar of the generated wiki or the help section (python Vengence.py --help).
+#### For detailed instructions, refer to the sections in the navigation bar of the generated wiki or the help section (python Vengence.py --help).
 
 
-# Functionality 
+## Functionality 
 
-## 1. **User Authentication**:
+#### 1. **User Authentication**:
 
    The script allows for user authentication using a GUI login prompt or command-line input.
    
-## 3. **Encryption and Obfuscation**:
+#### 3. **Encryption and Obfuscation**:
   
    The script provides encryption and obfuscation capabilities to secure sensitive data.
    
-## 5. **Tool Download and Execution**:
+#### 5. **Tool Download and Execution**:
 
    Vengence can download required tools, such as Nmap and Wireshark, and execute them for auditing purposes.
 
-## 6. **Email and SMS Notifications**:
+#### 6. **Email and SMS Notifications**:
    
    The script can send email and SMS notifications for various events, such as the completion of an audit report.
    
-## 7. **Payment Processing**:
+#### 7. **Payment Processing**:
    
    Vengence includes payment processing functionality to handle financial transactions related to the auditing process.
    
-## 8. **Wiki and GitHub Repository Files Creation**:
+#### 8. **Wiki and GitHub Repository Files Creation**:
 
    The script creates wiki and GitHub repository files for documentation purposes.
    
-## 10. **Clean-up**:
+#### 10. **Clean-up**:
 
     Vengence can clean up all created files and directories after use.
