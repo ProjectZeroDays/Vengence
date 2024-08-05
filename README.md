@@ -33,6 +33,10 @@ In terms of its functionality, Vengence performs various tasks such as:
 6. **Wiki and GitHub Repository Files Creation**: The script creates wiki and GitHub repository files for documentation purposes.
 7. **Clean-up**: Vengence can clean up all created files and directories after use.
 
+The script also includes functions for sending email notifications, sending SMS notifications, handling payment processing, creating configuration files, adding or removing the tool directory from the system PATH, downloading required tools, running the Vengence script, and sending an audit report via email and SMS.
+
+Additionally, the script creates wiki and GitHub repository files, including markdown files for usage instructions, configuration settings, API keys, and troubleshooting. It also includes a GitHub workflow file for continuous integration and testing.
+
 Vengence is a comprehensive tool that provides various functionalities for auditing and security testing. Its features make it useful for professionals in the cybersecurity industry or anyone who needs to perform audits and tests on networks and systems.
 
 ## Run
