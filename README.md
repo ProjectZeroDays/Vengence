@@ -1,10 +1,13 @@
 # Vengence Automated Pentesting Audit Framework 
 
+
 ## Documentation
+
 
 This documentation provides a comprehensive guide to using the Framework. 
 
 Vengence is a powerful Python script designed for auditing and security testing. It offers various functionalities, including user authentication, encryption and obfuscation, tool download and execution, email and SMS notifications, payment processing, and more.
+
 
 # Features
 
@@ -12,29 +15,36 @@ Vengence is a powerful Python script designed for auditing and security testing.
 
 Securely authenticate users with a GUI login prompt or command-line input.
 
+
 ## Encryption and Obfuscation: 
 
 Protect sensitive data using encryption and obfuscation techniques.
+
 
 ## Tool Download and Execution: 
 
 Automatically download and execute required tools, such as Nmap and Wireshark, for auditing purposes.
 
+
 ## Email and SMS Notifications: 
 
 Send email and SMS notifications for various events, including the completion of audit reports.
+
 
 ## Payment Processing: 
 
 Handle financial transactions related to the auditing process with built-in payment processing functionality.
 
+
 ## Wiki and GitHub Repository Files Creation: 
 
 Create wiki and GitHub repository files for comprehensive documentation.
 
+
 ## Clean-up: 
 
 Automatically clean up all created files and directories after use.
+
 
 # Quick Start
 
@@ -54,22 +64,56 @@ Run the script:
    
     python Vengence.py
 
+
 ## Usage
 
-To use Vengence, run the script with one or more options from the following list:
+Display help message with all available options:
 
---help: Display help message with all available options.
---generate-key: Generate an encryption key for securing sensitive data.
---setup-db: Set up the database and add an admin user.
---login: Show a GUI login prompt for authentication.
---create-config: Create configuration files for the script.
---add-path: Add the tool directory to the system PATH.
---remove-path: Remove the tool directory from the system PATH.
---download-tools: Download required tools, such as Nmap and Wireshark.
---run-tools: Run Vengence to execute the downloaded tools.
---send-report: Send an audit report via email and SMS.
---create-wiki: Create wiki and GitHub repository files for documentation.
---clean-up: Remove all created files and clean up traces.
+    --help
+
+Generate an encryption key for securing sensitive data:
+    
+    --generate-key
+    
+Set up the database and add an admin user:
+
+    --setup-db
+
+Show a GUI login prompt for authentication:
+
+    --login
+
+Create configuration files for the script:
+
+    --create-config
+
+Add the tool directory to the system PATH:
+
+    --add-path
+
+Remove the tool directory from the system PATH:
+
+--remove-path
+
+Download required tools, such as Nmap and Wireshark:
+    
+    --download-tools
+
+Run Vengence to execute the downloaded tools:
+
+    --run-tools 
+
+Send an audit report via email and SMS:
+
+    --send-report
+
+Create wiki and GitHub repository files for documentation:
+
+    --create-wiki
+
+Remove all created files and clean up traces:
+
+    --clean-up
 
 For detailed instructions, refer to the sections in the navigation bar of the generated wiki or the help section (python Vengence.py --help).
 
