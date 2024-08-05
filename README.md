@@ -132,4 +132,4 @@ For detailed instructions, refer to the sections in the navigation bar of the ge
    
 #### 10. **Clean-up**:
 
-    Vengence can clean up all created files and directories after use.
+   Vengence can clean up all created files and directories after use.
