@@ -8,33 +8,34 @@ Vengence is a powerful Python script designed for auditing and security testing.
 
 ## Features
 
-User Authentication: 
+### User Authentication: 
 
 Securely authenticate users with a GUI login prompt or command-line input.
 
-Encryption and Obfuscation: 
+### Encryption and Obfuscation: 
 
 Protect sensitive data using encryption and obfuscation techniques.
 
-Tool Download and Execution: 
+### Tool Download and Execution: 
 
 Automatically download and execute required tools, such as Nmap and Wireshark, for auditing purposes.
 
-Email and SMS Notifications: 
+### Email and SMS Notifications: 
 
 Send email and SMS notifications for various events, including the completion of audit reports.
 
-Payment Processing: 
+### Payment Processing: 
 
 Handle financial transactions related to the auditing process with built-in payment processing functionality.
 
-Wiki and GitHub Repository Files Creation: 
+### Wiki and GitHub Repository Files Creation: 
 
 Create wiki and GitHub repository files for comprehensive documentation.
 
-Clean-up: 
+### Clean-up: 
 
 Automatically clean up all created files and directories after use.
+
 
 ## Quick Start
 
