@@ -1,0 +1,8 @@
+site_name: Vengence Automated Pentesting Audit Tool
+nav:
+    - Home: index.md
+    - Usage: usage.md
+    - Configuration: configuration.md
+    - API Keys: api_keys.md
+    - Troubleshooting: troubleshooting.md
+theme: readthedocs
