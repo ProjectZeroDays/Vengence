@@ -1,12 +1,14 @@
 # Vengence Automated Pentesting Audit Framework 
 
-
-## Documentation
-
-
 This documentation provides a comprehensive guide to using the Framework. 
 
-Vengence is a powerful Python script designed for auditing and security testing. It offers various functionalities, including user authentication, encryption and obfuscation, tool download and execution, email and SMS notifications, payment processing, and more.
+Vengence is a powerful Python script designed for auditing and security testing. It offers various functionalities, including user authentication, encryption and obfuscation, tool download and execution, payment processing, and more.
+
+The script also includes functions for sending email notifications, sending SMS notifications, handling payment processing, creating configuration files, adding or removing the tool directory from the system PATH, downloading required tools, running the Vengence script, and sending an audit report via email and SMS.
+
+Additionally, the script creates wiki and GitHub repository files, including markdown files for usage instructions, configuration settings, API keys, and troubleshooting. It also includes a GitHub workflow file for continuous integration and testing.
+
+Vengence is a comprehensive tool that provides various functionalities for auditing and security testing. Its features make it useful for professionals in the cybersecurity industry or anyone who needs to perform audits and tests on networks and systems.
 
 
 # Features
@@ -117,7 +119,8 @@ Remove all created files and clean up traces:
 
 For detailed instructions, refer to the sections in the navigation bar of the generated wiki or the help section (python Vengence.py --help).
 
-## Functionality 
+
+# Functionality 
 
 1. **User Authentication**:
 
@@ -147,11 +150,7 @@ For detailed instructions, refer to the sections in the navigation bar of the ge
 
     Vengence can clean up all created files and directories after use.
 
-The script also includes functions for sending email notifications, sending SMS notifications, handling payment processing, creating configuration files, adding or removing the tool directory from the system PATH, downloading required tools, running the Vengence script, and sending an audit report via email and SMS.
 
-Additionally, the script creates wiki and GitHub repository files, including markdown files for usage instructions, configuration settings, API keys, and troubleshooting. It also includes a GitHub workflow file for continuous integration and testing.
-
-Vengence is a comprehensive tool that provides various functionalities for auditing and security testing. Its features make it useful for professionals in the cybersecurity industry or anyone who needs to perform audits and tests on networks and systems.
 
 ## Run
 
