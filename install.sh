@@ -34,6 +34,17 @@ case "$OS" in
     "darwin")
         echo "Mac OS detected."
         brew install python3 python3-tk &> /dev/null
+        
+        # Check if the directory exists and create it if it doesn't
+        DIRECTORY="/private/tmp"
+        if [ ! -d "$DIRECTORY" ]; then
+            echo "Creating directory $DIRECTORY..."
+            sudo mkdir "$DIRECTORY"
+            defaults write com.apple.systempreferences TemporaryDirectory "$DIRECTORY"
+            echo "Directory $DIRECTORY created and system preference set."
+        else
+            echo "Directory $DIRECTORY already exists."
+        fi
         ;;
     "linux")
         echo "Linux OS detected."
