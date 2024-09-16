@@ -1,0 +1,9 @@
+cryptography==3.4.1
+Fernet==1.1.0
+base64==0.64.0
+sqlite3==3.36.0
+tkinter==8.6.12
+urllib3==1.25.10
+requests==2.25.1
+email==3.5.0
+smtplib==3.5.0
