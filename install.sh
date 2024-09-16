@@ -63,11 +63,26 @@ git clone https://github.com/projectzerodays/Vengence.git &> /dev/null
 # Change to the Vengence directory
 cd Vengence &> /dev/null
 
-# Install Dependencies
-pip install -r requirements.txt 
+# Install required Python packages
+pip install -r requirements.txt
+
+# Create configuration directory
+CONFIG_DIR="$HOME/.config/audit_tool"
+mkdir -p "$CONFIG_DIR"
+
+# Generate encryption key
+SECRET_KEY_PATH="$CONFIG_DIR/secret.key"
+if [ ! -f "$SECRET_KEY_PATH" ]; then
+    python3 -c "from cryptography.fernet import Fernet; key = Fernet.generate_key(); open('$SECRET_KEY_PATH', 'wb').write(key)"
+    echo "Encryption key generated and saved to $SECRET_KEY_PATH"
+else
+    echo "Encryption key already exists at $SECRET_KEY_PATH"
+fi
 
 # Make the Vengence.py script executable
 chmod +x Vengence.py &> /dev/null
+
+echo "Installation complete."
 
 # Run the Vengence.py script
 python3 Vengence.py
