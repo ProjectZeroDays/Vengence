@@ -1,5 +1,5 @@
 cryptography==3.4.1
-Fernet==1.1.0
+Fernet
 base64==0.64.0
 sqlite3==3.36.0
 tkinter==8.6.12
