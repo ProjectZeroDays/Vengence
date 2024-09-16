@@ -32,7 +32,7 @@ fi
 case "$OS" in
     "darwin")
         echo "Mac OS detected."
-        brew install -y python3 python3-tk
+        brew install python3 python3-tk
         ;;
     "linux")
         echo "Linux OS detected."
