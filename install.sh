@@ -5,7 +5,7 @@ if ! command -v brew &> /dev/null
 then
     # Install brew if it's not installed
     echo "Installing Homebrew..."
-    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)" &> /dev/null
     echo "Done."
 fi
 
@@ -13,7 +13,8 @@ fi
 if command -v brew &> /dev/null
 then
     echo "Updating Homebrew..."
-    brew update
+    brew update &> /dev/null
+    brew upgrade &> /dev/null
     echo "Done."
 fi
 
@@ -32,12 +33,12 @@ fi
 case "$OS" in
     "darwin")
         echo "Mac OS detected."
-        brew install python3 python3-tk
+        brew install python3 python3-tk &> /dev/null
         ;;
     "linux")
         echo "Linux OS detected."
-        sudo apt-get update -y
-        sudo apt-get install -y python3 python3-pip python3-tk
+        sudo apt-get update -y  &> /dev/null
+        sudo apt-get install -y python3 python3-pip python3-tk &> /dev/null
         ;;
     *)
         echo "Unsupported OS. Exiting..."
@@ -49,13 +50,13 @@ esac
 git clone https://github.com/projectzerodays/Vengence.git &> /dev/null
 
 # Change to the Vengence directory
-cd Vengence
+cd Vengence &> /dev/null
 
 # Install Dependencies
-pip install -r requirements.txt
+pip install -r requirements.txt 
 
 # Make the Vengence.py script executable
-chmod +x Vengence.py
+chmod +x Vengence.py &> /dev/null
 
 # Run the Vengence.py script
 python3 Vengence.py
