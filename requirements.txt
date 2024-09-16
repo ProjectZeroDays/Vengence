@@ -1,6 +1,5 @@
 cryptography==3.4.1
 Fernet
-sqlite3==3.36.0
 tkinter==8.6.12
 urllib3==1.25.10
 requests==2.25.1
