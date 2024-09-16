@@ -32,7 +32,7 @@ fi
 case "$OS" in
     "darwin")
         echo "Mac OS detected."
-        brew install -y python3 python3-pip python3-tk
+        brew install -y python3 python3-tk
         ;;
     "linux")
         echo "Linux OS detected."
@@ -46,7 +46,7 @@ case "$OS" in
 esac
 
 # Clone the Vengence repository
-git clone https://github.com/projectzerodays/Vengence.git
+git clone https://github.com/projectzerodays/Vengence.git &> /dev/null
 
 # Change to the Vengence directory
 cd Vengence
